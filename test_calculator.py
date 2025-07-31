@@ -1,15 +1,21 @@
 # https://github.com/HaowenYang2004/lab10-HY-ZH.git
+# Partner 1: Haowen Yang
+# Partner 2: Zixuan Huang
 import unittest
 from calculator import *
 
 class TestCalculator(unittest.TestCase):
     ######### Partner 2
-    # def test_add(self): # 3 assertions
-    #     fill in code
+    def test_add(self): # 3 assertions
+        self.assertEqual(add(1, 2), 3)
+        self.assertEqual(add(-5, -4), -9)
+        self.assertEqual(add(2, -7), -5)
 
-    # def test_subtract(self): # 3 assertions
-    #     fill in code
-    # ##########################
+    def test_subtract(self): # 3 assertions
+        self.assertEqual(sub(2,3), -1)
+        self.assertEqual(sub(-5,4), -9)
+        self.assertEqual(sub(7,1), 6)
+
 
     ######## Partner 1
     def test_multiply(self):
@@ -23,29 +29,27 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(div(2,-8),-4)
 
     ######## Partner 2
-    # def test_divide_by_zero(self): # 1 assertion
-    #     # call division function inside, example:
-    #     # with self.assertRaises(<INSERT_ERROR_TYPE>):
-    #     #     div(0, 5)
-    #     fill in code
+    def test_divide_by_zero(self): # 1 assertion
+        # div(a, b) = b/a
+        with self.assertRaises(ZeroDivisionError):
+            div(0, 3)       # a = 0 is invalid
 
-    # def test_logarithm(self): # 3 assertions
-    #     fill in code
 
-    # def test_log_invalid_base(self): # 1 assertion
-    #     # use same technique from test_divide_by_zero
-    #     fill in code
-    # ##########################
+    def test_logarithm(self): # 3 assertions
+        self.asserEqual(log(2, 1), 0)
+        self.assertEqual(log(3, 9), 2)
+        self.assertEqual(log(16, 4), 0.5)
+
+
+    def test_log_invalid_base(self): # 1 assertion
+        # log(a, b) = base a, value b
+        with self.assertRaises(ValueError):
+            log(1, 5)       # base = 1 is invalid
+
 
     ######## Partner 1
     def test_log_invalid_argument(self):
         # log(a, b): base=a, value=b
-        # log(1, 5): base cannot be 1, should raise
-        with self.assertRaises(ValueError):
-            log(1, 5)
-        # log(-2, 5): base cannot be negative, should raise
-        with self.assertRaises(ValueError):
-            log(-2, 5)
         # log(2, -5): value cannot be negative, should raise
         with self.assertRaises(ValueError):
             log(2, -5)
