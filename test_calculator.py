@@ -12,9 +12,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(add(2, -7), -5)
 
     def test_subtract(self): # 3 assertions
-        self.assertEqual(sub(2,3), -1)
-        self.assertEqual(sub(-5,4), -9)
-        self.assertEqual(sub(7,1), 6)
+        self.assertEqual(subtract(2,3), -1)
+        self.assertEqual(subtract(-5,4), -9)
+        self.assertEqual(subtract(7,1), 6)
 
 
     ######## Partner 1
@@ -36,15 +36,15 @@ class TestCalculator(unittest.TestCase):
 
 
     def test_logarithm(self): # 3 assertions
-        self.assertEqual(log(2, 8), 3)
-        self.assertEqual(log(3, 9), 2)
-        self.assertEqual(log(16, 4), 0.5)
+        self.assertEqual(logarithm(2, 8), 3)
+        self.assertEqual(logarithm(3, 9), 2)
+        self.assertEqual(logarithm(16, 4), 0.5)
 
 
     def test_log_invalid_base(self): # 1 assertion
         # log(a, b) = base a, value b
         with self.assertRaises(ValueError):
-            log(1, 5)       # base = 1 is invalid
+            logarithm(1, 5)       # base = 1 is invalid
 
 
     ######## Partner 1
@@ -52,7 +52,7 @@ class TestCalculator(unittest.TestCase):
         # log(a, b): base=a, value=b
         # log(2, -5): value cannot be negative, should raise
         with self.assertRaises(ValueError):
-            log(2, -5)
+            logarithm(2, -5)
 
     def test_hypotenuse(self):
         self.assertAlmostEqual(hypotenuse(3, 4), 5.0, places=5)
