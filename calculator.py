@@ -30,7 +30,7 @@ def log(a, b):      #raise ValueError
         raise ValueError('Base a must be positive and not equal to 1.')
     if b <= 0:
         raise ValueError('Value b must be positive.')
-    return math.log(a, b)
+    return math.log(b, a)
 
 def exp(a, b):
     return a ** b
