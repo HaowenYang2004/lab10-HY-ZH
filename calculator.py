@@ -1,4 +1,6 @@
 # https://github.com/HaowenYang2004/lab10-HY-ZH.git
+# Partner 1: Haowen Yang
+# Partner 2: Zixuan Huang
 import math
 
 def square_root(a):
